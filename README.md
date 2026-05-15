@@ -6,11 +6,13 @@ Which segments + categories drive Q3 2017 performance?
 
 ## Data & Approach
 
+```sql
 -- Check what your dates actually look like in the table
 SELECT order_date
 FROM superstore
 LIMIT 5;
-
+```
+```sql
 -- Convert order_date from text to proper DATE type
 ALTER TABLE superstore
 ALTER COLUMN order_date TYPE DATE
@@ -19,7 +21,8 @@ USING TO_DATE(order_date, 'MM/DD/YYYY');
 select count(*) as q3_orders
 from superstore
 where order_date between '2017-07-01' and '2017-09-30';
-
+```
+```sql
 -- Business question: Which segments + categories drive Q3 2017 performance?
 
 select 
@@ -38,7 +41,9 @@ from superstore
 where order_date between '2017-07-01' and '2017-09-30'
 group by segment , category 
 order by revenue desc;
-	
+
+'''
+
 ## Key Findings
 
 1- Corporate / Office Supplies generated the highest margin of any combination in Q3 at 22.6%, on $24,461 revenue.
