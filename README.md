@@ -1,57 +1,40 @@
-# Q3 2017 Retail Intelligence Report
+# Elite Analyst Accelerator - Portfolio 
+**Mohammed Al Akm . Phase 1 of 6 . Week 2 of 36**
 
-## Business Question
+---
 
-Which segments + categories drive Q3 2017 performance?
+## About 
+Building from zero to job-ready data analyst in 36 weeks.
+Tools: PostgreSQL . Python . Power BI . Excel . Git
 
-## Data & Approach
+---
 
-```sql
--- Check what your dates actually look like in the table
-SELECT order_date
-FROM superstore
-LIMIT 5;
-```
-```sql
--- Convert order_date from text to proper DATE type
-ALTER TABLE superstore
-ALTER COLUMN order_date TYPE DATE
-USING TO_DATE(order_date, 'MM/DD/YYYY');
+## Repo Structure 
+| Folder | Content |
+|--------|---------|
+| /sql | All SQL query files by week |
+| /notebookd | Jupyter notebooks - Python + pandas |
+| /notes | Frameworks, recalls, analysis notes |
 
-select count(*) as q3_orders
-from superstore
-where order_date between '2017-07-01' and '2017-09-30';
-```
-```sql
--- Business question: Which segments + categories drive Q3 2017 performance?
+---
 
-select 
-	segment,
-	category,
-	count(*) as orders,
-	round(sum(sales):: numeric, 0) as revenue,
-	round(sum(profit):: numeric, 0) as profit,
-	round((sum(profit)/sum(sales) * 100)::numeric, 1) as margin_pct,
-	case
-		when sum(profit) / sum(sales) * 100 >= 20 then 'High Priority'
-		when sum(profit) / sum(sales) * 100 >= 10 then 'Medium'
-		else 'Review'
-	end as priority_flag
-from superstore
-where order_date between '2017-07-01' and '2017-09-30'
-group by segment , category 
-order by revenue desc;
+## Week 1 - Completed 
+**Concepts:** SELECT . WHERE . GROUP BY . HAVING . INNER JOIN .
+LEFT JOIN . CASE WHEN . DATE functions . Python fundamentals . pandas EDA 
 
-'''
+**Key findings from Superstore dataset:**
+-Furniture margin: 2.5% vs Technology 17.4% - significant underperformance 
+-Tables sub-category loses money in 3 of 4 regions 
+-1.871 of 9.994 orders (19%) are loss-making 
+-Revenue grew from $484k (2014) to $733k (2017)
 
-## Key Findings
+---
 
-1- Corporate / Office Supplies generated the highest margin of any combination in Q3 at 22.6%, on $24,461 revenue.
-2- Furniture is underperforming across all 3 segments in Q3, with margins between 2.7% and 5.5% — flagged as Review 
-in every case despite Consumer Furniture reaching $30,592 in revenue.
-3- Home Office / Technology has a 20.9% margin on $16,539 revenue — flagged High Priority 
-despite the lowest order count (33 orders). High margin, underpenetrated.
-
-## Recommendations
- 
- Increase sales effort on Home Office / Technology — strong margin with room to grow volume.
+## Week 2 - In Progress
+-[] GitHub repo organised
+-[] 5Q Framework applied to 3 Irish business articles 
+-[] README updated
+-[] Power BI first look
+-[] Subqueries
+-[] Excel fundamentals 
+-[] SQL to Excel integration 
