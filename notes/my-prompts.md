@@ -16,3 +16,25 @@ Context: I have a table called [TABLE] with columns
 [COLUMNS]. Key finding: [YOUR FINDING].
 Question: [SPECIFIC BUSINESS QUESTION]
 Format: numbered list, one sentence each, business language.
+
+## Day 4 — Negative Prompting
+
+**WITH negative instructions:**
+"Write a SQL query to find total profit by category. 
+Do not explain the code. Do not use subqueries. Just give the query."
+
+Result: Clean query only — no explanation.
+
+---
+
+**WITHOUT negative instructions:**
+"Write a SQL query to find total profit by category."
+
+Result: Query + full line-by-line explanation.
+
+---
+
+**Key lesson:** Negative instructions remove noise. 
+Use when you want output only.
+
+**Template:** "[task]. Do not [X]. Do not [Y]. Just [what you want]."
