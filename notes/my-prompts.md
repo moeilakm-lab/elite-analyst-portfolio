@@ -81,3 +81,40 @@ No SQL. No technical language.
 **AI Answer**
 In the West region, Envelopes, Paper, and Labels are the standout performers, turning approximately 45–46 cents of every dollar sold into pure profit. Doubling down on these three sub-categories — through targeted promotions or expanded inventory — represents one of the clearest, lowest-risk ways to grow the West region's bottom line.
 
+## Prompt Templates
+ROLE: You are a [role].
+CONTEXT: [situation/background]
+TASK: [what to do]
+FORMAT: [how to respond]
+CONSTRAINT: [what to avoid]
+
+**Help me debug a SQL query that's giving wrong results**
+ROLE: You are a senior SQL analyst.
+
+CONTEXT: I have a query that runs without error but returns wrong results.
+Query: [SQL_QUERY]
+Expected result: ___________
+Actual result: ___________
+
+TASK: Identify why the results are wrong and fix the query.
+
+FORMAT: technical 
+
+CONSTRAINT: no business explaination only give me the correct sql code
+
+**Template 2 — Business Summary**
+ROLE : You are senior SQL analyst
+CONTEXT: I have created SQL query applied on a retail store dataset and got the below restult : 
+[result in table]
+TASK : [BUSINESS_QUESTION] 
+FORMAT : the answer shoul be in plain english understandable by [AUDIENCE]
+CONSTRAINT : avoid any technical terms or any sql code
+
+**Explain a SQL concept to me like I'm learning it for the first time**
+ROLE / CONTEXT / TASK / FORMAT / CONSTRAINT
+
+ROLE: you are SQL trainer 
+CONTEXT : [CONCEPT]
+TASK: explain this concept to me like i am learning it for the first time
+FORMAT: explain it in educational format supported with examples
+CONSTRAINT: avoid any complexity or assuming that i know terms or concepts before
