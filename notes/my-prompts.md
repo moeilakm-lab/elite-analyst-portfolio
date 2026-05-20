@@ -118,3 +118,17 @@ CONTEXT : [CONCEPT]
 TASK: explain this concept to me like i am learning it for the first time
 FORMAT: explain it in educational format supported with examples
 CONSTRAINT: avoid any complexity or assuming that i know terms or concepts before
+
+## Prompt Engineering — Week 3, Day 2: Prompt Chaining
+
+**Design a chain for this scenario: you have a list of SQL queries you wrote this week. You want to turn them into a portfolio README section.**
+##### Chain: SQL queries → portfolio README
+Write all 3 prompts. Don't run them yet — just design the chain. Show me your 3 prompts.
+
+Prompt 1: "You are a SQL trainer. Here are my queries: [SQL]. Review and debug them. Return only the corrected queries with a one-line note on what you fixed."
+
+
+Prompt 2: "Here are my corrected queries: [Prompt 1 output]. Explain what each query does and when an analyst would use it. One paragraph per query."
+
+
+Prompt 3: "Here are my query explanations: [Prompt 2 output]. Turn these into a portfolio README section. Use markdown. Keep it professional and concise."
