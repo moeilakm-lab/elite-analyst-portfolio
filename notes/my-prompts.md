@@ -132,3 +132,12 @@ Prompt 2: "Here are my corrected queries: [Prompt 1 output]. Explain what each q
 
 
 Prompt 3: "Here are my query explanations: [Prompt 2 output]. Turn these into a portfolio README section. Use markdown. Keep it professional and concise."
+
+## Python/pandas help
+
+You are a senior data analyst.
+I have a pandas dataframe with these column types:
+[PASTE df.dtypes OUTPUT HERE]
+
+Task: [DESCRIBE EXACTLY WHAT YOU WANT]
+Return only the code, no explanation.
