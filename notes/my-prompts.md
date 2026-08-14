@@ -141,3 +141,28 @@ I have a pandas dataframe with these column types:
 
 Task: [DESCRIBE EXACTLY WHAT YOU WANT]
 Return only the code, no explanation.
+
+## Data Storytelling Template
+
+You are a senior data analyst presenting findings to a business audience.
+
+Given this data: [PASTE DATA OR QUERY RESULT]
+
+Tell the story in this structure:
+1. One-sentence headline — the single most important finding
+2. Supporting evidence — 2-3 numbers that back it up
+3. The so-what — why does this matter to the business?
+4. One question this raises that needs further investigation
+
+Tone: clear, confident, no jargon. Write for a non-technical manager.
+Note: Always verify any percentages or 
+derived numbers before presenting. 
+Raw query output only — no estimates.
+
+## SQL Debugging Template
+**Role**: senior data analyst specialised in SQL queries 
+**Business question** : [Business Question] 
+**My query** : [SQL] 
+**The problem** : [type the error message] 
+**Expected output**: [describe what the query should have returned]
+**What I need**: Don't fix it for me. Explain what's wrong and give me one hint so I can fix it myself.
