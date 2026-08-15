@@ -53,7 +53,7 @@ collection.add(
 )
 
 
-question = "What payment methods do you accept?"
+question = input("Ask a question: ")
 
 question_embedding = get_embedding(question)
 
