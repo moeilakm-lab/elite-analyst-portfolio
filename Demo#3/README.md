@@ -20,18 +20,16 @@ It's been tested on invoices in different currencies and with different numbers 
 ### Fields extracted
 
 **Invoice-level (repeated on every row):**
-- Invoice number
-- Invoice date
 - Vendor name
-- Customer name
-- Currency
+- Invoice date
+- Invoice number
 - Total amount
+- Currency
 
 **Line-item level (one row per item):**
-- Description
+- Item name
 - Quantity
 - Unit price
-- Line total
 
 ## How to run it
 
@@ -52,14 +50,15 @@ export ANTHROPIC_API_KEY="your-api-key-here"
 python invoice_extractor.py sample_invoice.pdf
 ```
 
-This produces a CSV file with one row per line item, invoice details repeated across each row for that invoice.
+This produces a CSV file with one row per line item, invoice details repeated across each row.
 
 ## Example output
 
-| invoice_number | invoice_date | vendor_name | customer_name | currency | total_amount | description | quantity | unit_price | line_total |
-|---|---|---|---|---|---|---|---|---|---|
-| INV-1042 | 2026-06-14 | Acme Supplies | Northshop Ltd | EUR | 458.00 | Widget A | 10 | 12.50 | 125.00 |
-| INV-1042 | 2026-06-14 | Acme Supplies | Northshop Ltd | EUR | 458.00 | Widget B | 5 | 45.00 | 225.00 |
+| vendor_name | invoice_date | invoice_number | total_amount | currency | item_name | quantity | unit_price |
+|---|---|---|---|---|---|---|---|
+| Bright Digital Agency GmbH | 2026-07-30 | RG-2026-03341 | 10800 | GBP | Brand Strategy Workshop | 2 | 1500 |
+| Bright Digital Agency GmbH | 2026-07-30 | RG-2026-03341 | 10800 | GBP | Social Media Campaign Management | 1 | 2200 |
+| Bright Digital Agency GmbH | 2026-07-30 | RG-2026-03341 | 10800 | GBP | Logo & Visual Identity Redesign | 1 | 3800 |
 
 ## Notes
 
